@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(213, 213, 217);
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: rgb(153, 15, 153);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  width: 80%;
+
+  margin: auto;
+}
+
+section {
+  background-color: rgb(227, 227, 234);
+  padding: 25px;
+  border-radius: 50px;
+}
+
+section:hover {
+  box-shadow: 8px 8px 20px 0 rgb(153, 15, 153);
+}
+
+img {
+  border-radius: 50px;
+  border: 3px solid transparent;
+}
+
+img:hover {
+  border-color: rgb(153, 15, 153);
+}
