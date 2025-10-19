@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles-3.css" />
+    <title>Basic Contact Form</title>
+  </head>
+  <body>
+    <h1>Enter your contact details</h1>
+    <form action="#">
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname" placeholder="John" required />
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname" placeholder="Smith" required />
+      <label for="title">Title:</label>
+      <select name="title" id="title">
+        <option value="mr">Mr</option>
+        <option value="ms">Ms</option>
+        <option value="mrs">Mrs</option>
+        <option value="miss">Miss</option>
+        <option value="dr">Dr</option>
+        <option value="sir">Sir</option>
+      </select>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="example@email.com"
+        required
+      />
+      <label for="message">Enter a message (optional)</label>
+      <textarea
+        rows="3"
+        cols="16"
+        name="message"
+        id="message"
+        placeholder="Anything you want to text us"
+      ></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  gap: 0.5rem;
+  background-color: lightgoldenrodyellow;
+  padding-block: 2rem;
+  border-radius: 50px;
+  border: 2px solid black;
+}
+
+label {
+  font-size: 18px;
+}
+
+::placeholder {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+select {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+input,
+select,
+textarea {
+  width: 80%;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 2px solid black;
+  outline: none;
+}
+
+input:hover {
+  border-color: red;
+}
+
+select:hover {
+  border-color: red;
+}
+
+textarea:hover {
+  border-color: red;
+}
+
+input:focus {
+  border: 2px dashed black;
+}
+
+select:focus {
+  border: 2px dashed black;
+}
+
+textarea:focus {
+  border: 2px dashed black;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: transparent;
+  box-shadow: none;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px dashed black;
+}
