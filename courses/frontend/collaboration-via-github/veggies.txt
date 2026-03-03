@@ -1,5 +1,7 @@
 carrot
 cabbage
-corn
+pepper
 potato
 cucumber
+garlic
+tomato
