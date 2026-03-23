@@ -9,10 +9,17 @@
   </head>
   <body>
     <div class="calculator">
-      <h1>Currency Converter</h1>
+      <h1>💵 Currency Converter 💵</h1>
       <form class="calc-form">
         <label for="amount">Amount:</label>
-        <input type="number" name="amount" id="amount" />
+        <input
+          type="number"
+          name="amount"
+          id="amount"
+          step="0.01"
+          min="0"
+          placeholder="0.00"
+        />
         <label for="currency-from">From:</label>
         <select name="currency-from" id="currency-from"></select>
         <label for="currency-to">To:</label>
