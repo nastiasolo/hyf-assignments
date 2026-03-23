@@ -53,3 +53,30 @@ select {
   font-weight: 700;
   font-size: 20px;
 }
+
+.result {
+  height: 16px;
+}
+
+.result-output {
+  text-align: center;
+  align-self: center;
+}
+
+@media (max-width: 950px) {
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    align-self: center;
+  }
+
+  .calc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .calculator {
+    min-height: 500px;
+  }
+}
