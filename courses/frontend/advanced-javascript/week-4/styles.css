@@ -7,6 +7,7 @@ body {
   background-image: url("https://images.unsplash.com/photo-1622126128210-9eed44cfde29?q=80&w=1618&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-position: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,4 +75,53 @@ body {
   color: palevioletred;
   border: 2px solid palevioletred;
   scale: 1.01;
+}
+
+.modal {
+  width: 66%;
+  border: 3px solid black;
+}
+
+.modal[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.close-button {
+  align-self: self-start;
+  width: 30px;
+  aspect-ratio: 1;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition-duration: 0.5s;
+  transition-property: background-color;
+}
+
+.close-button:hover {
+  background-color: palevioletred;
+}
+
+.result-image {
+  width: 80%;
+  border-radius: 30px;
+  border: 3px solid palevioletred;
+}
+
+.save-button {
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition-duration: 0.5s;
+  transition-property: background-color;
+}
+
+.save-button:hover {
+  background-color: palevioletred;
 }
