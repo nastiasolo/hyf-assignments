@@ -125,3 +125,46 @@ body {
 .save-button:hover {
   background-color: palevioletred;
 }
+
+.cards-title {
+  display: none;
+  text-align: center;
+  color: palevioletred;
+  margin: 0;
+}
+
+.cards-container {
+  display: flex;
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.delete-button {
+  width: 100px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition-duration: 0.5s;
+  transition-property: scale color;
+}
+
+.delete-button:hover {
+  color: palevioletred;
+  border: 2px solid palevioletred;
+  scale: 1.01;
+}
