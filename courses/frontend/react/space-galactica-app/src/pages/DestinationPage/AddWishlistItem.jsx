@@ -6,11 +6,13 @@ export const AddWishlistItem = ({ onAddWishlistItem, nextId }) => {
   const [name, setName] = useState("");
 
   const onAddItemPressed = () => {
-    if (name.trim() === "") return;
+    const trimmedName = name.trim();
+
+    if (trimmedName === "") return;
 
     onAddWishlistItem({
       id: nextId,
-      name: name,
+      name: trimmedName,
       thumbnail: thumbnail,
       description: "A mysterious custom destination.",
       isSelected: true,

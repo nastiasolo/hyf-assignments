@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./NasaCollaborationPage.module.css";
 import { RoverPhoto } from "./RoverPhoto";
 
-const API_KEY = "u0jCIyZSv9nlupzHP3o2fJ9zKHe1ev8OrO8ouItH";
+const API_KEY = import.meta.env.VITE_NASA_API_KEY;
 
 const NASA_URLs = {
   astronomyPicOfTheDay: `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`,
@@ -12,13 +12,23 @@ const NASA_URLs = {
 export const NasaCollaboration = () => {
   const [dailyImg, setDailyImg] = useState({});
   const [roverPhoto, setRoverPhoto] = useState({});
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchRoverPhotos = async () => {
-      const roverPhotoResponse = await fetch(NASA_URLs.marsRoverPhoto).then(
-        (response) => response.json(),
-      );
-      setRoverPhoto(roverPhotoResponse);
+      try {
+        const response = await fetch(NASA_URLs.marsRoverPhoto);
+
+        if (!response.ok) {
+          throw new Error("Error fetching rover photos");
+        }
+
+        const roverPhotoResponse = await response.json();
+        setRoverPhoto(roverPhotoResponse);
+      } catch (err) {
+        setError("Can not fetch. Try again later");
+        console.error("Rover fetch error:", err);
+      }
     };
 
     fetchRoverPhotos();
@@ -43,18 +53,32 @@ export const NasaCollaboration = () => {
           <h2>Astronomy Picture of the day</h2>
           <h3>{dailyImg.title}</h3>
           <p>{dailyImg.explanation}</p>
-          <img
-            className={styles.nasaPicOfTheDayImg}
-            src={dailyImg.hdurl}
-            alt={dailyImg.title}
-          />
+          {dailyImg.media_type === "video" ? (
+            <video
+              controls
+              autoPlay
+              muted
+              loop
+              className={styles.nasaPicOfTheDayImg}
+            >
+              <source src={dailyImg.url} type="video/mp4" />
+            </video>
+          ) : (
+            <img
+              className={styles.nasaPicOfTheDayImg}
+              src={dailyImg.url || dailyImg.hdurl}
+              alt={dailyImg.title}
+            />
+          )}
         </section>
         <section className="card">
           <h2>Rover Photos</h2>
           <div className={styles.roverContainer}>
             {/* 🧑🏽‍🚀 Task - Week 3 */}
             {/* Iterate over the roverPhoto?.photos array and display all the pictures. */}
-            {roverPhoto?.photos?.length > 0 ? (
+            {error ? (
+              <p className={styles.errorText}>{error}</p>
+            ) : roverPhoto?.photos?.length > 0 ? (
               roverPhoto.photos.map((photo) => (
                 <RoverPhoto
                   key={photo.id}
