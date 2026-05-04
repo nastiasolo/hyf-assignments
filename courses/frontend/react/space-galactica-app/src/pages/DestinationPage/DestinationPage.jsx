@@ -64,8 +64,3 @@ export const Destinations = () => {
 };
 
 export default Destinations;
-
-// 🧑🏽‍🚀 Task - Week 4 - part 2
-// Hate to break it to you, but you will have to make some changes to the code you already wrote.
-// Now that you have context, grab and use the context data in this.
-// You will need to replace some of the variables and functions with the ones from the context.

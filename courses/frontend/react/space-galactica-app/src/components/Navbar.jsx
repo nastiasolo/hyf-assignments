@@ -37,8 +37,6 @@ export const Navbar = () => {
             </Badge>
           </li>
         </ul>
-        {/* 🧑🏽‍🚀 Task - Week 4 - part 3 */}
-        {/* Take the count of the planets wishlist from the context and display it in the Badge. */}
       </nav>
     </header>
   );
