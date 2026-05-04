@@ -1,3 +1,5 @@
+import styles from "./DestinationPage.module.css";
+
 export const PlanetsWishlistItem = ({ name, thumbnail, onRemove }) => {
   return (
     <div className={styles.wishlistItem}>

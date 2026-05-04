@@ -21,21 +21,13 @@ export const Footer = () => {
       <div className={styles.pages}>
         <h3>Pages</h3>
         <ul className={styles.footerList}>
-          <li>
-            <Link to={navbarItems[0].link}>
-              <b>{navbarItems[0].id}</b> {navbarItems[0].title}
-            </Link>
-          </li>
-          <li>
-            <Link to={navbarItems[1].link}>
-              <b>{navbarItems[1].id}</b> {navbarItems[1].title}
-            </Link>
-          </li>
-          <li>
-            <Link to={navbarItems[2].link}>
-              <b>{navbarItems[2].id}</b> {navbarItems[2].title}
-            </Link>
-          </li>
+          {navbarItems.map((item) => (
+            <li key={item.id}>
+              <Link to={item.link}>
+                <b>{item.id}</b> {item.title}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
       {/* Docs for the Link: https://reactrouter.com/api/components/Link#link. */}
