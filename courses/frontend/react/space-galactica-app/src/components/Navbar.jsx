@@ -1,12 +1,15 @@
 import { useLocation } from "react-router-dom";
+import { useContext } from "react";
 import { Planet } from "../icons/Planet";
 import { Badge } from "./Badge";
 import styles from "./Navbar.module.css";
 import { navbarItems } from "../../data/navigation";
 import { NavItem } from "./NavItem";
+import { WishlistContext } from "../context/WishlistContext";
 
 export const Navbar = () => {
   const currentPath = useLocation().pathname;
+  const { wishlistCount } = useContext(WishlistContext);
 
   return (
     <header className={styles.headerContainer}>
@@ -29,7 +32,7 @@ export const Navbar = () => {
             />
           ))}
           <li className={styles.wishlistBadge} aria-label="Wishlist">
-            <Badge count={0}>
+            <Badge count={wishlistCount}>
               <Planet color="white" />
             </Badge>
           </li>
