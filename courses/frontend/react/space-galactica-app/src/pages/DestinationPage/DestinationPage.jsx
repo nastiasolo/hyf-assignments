@@ -1,29 +1,24 @@
-import { useState } from "react";
+import { useContext } from "react";
 import styles from "./DestinationPage.module.css";
 import { PlanetsWishlistItem } from "./PlanetsWishlistItem";
 import { PlanetCard } from "./PlanetCard";
 import { planetsList } from "../../../data/planets";
 import { AddWishlistItem } from "./AddWishlistItem";
+import { WishlistContext } from "../../context/WishlistContext";
 
 export const Destinations = () => {
-  const [planetsWishlist, setPlanetsWishlist] = useState([]);
-
-  const isPlanetInWishlist = (name) => {
-    return planetsWishlist.some((p) => p.name === name);
-  };
+  const {
+    planetsWishlist,
+    addPlanetToWishlist,
+    removePlanetFromWishlist,
+    isPlanetInWishlist,
+    wishlistCount,
+  } = useContext(WishlistContext);
 
   const togglePlanetSelection = (planet) => {
     isPlanetInWishlist(planet.name)
       ? removePlanetFromWishlist(planet.name)
       : addPlanetToWishlist(planet);
-  };
-
-  const addPlanetToWishlist = (planet) => {
-    setPlanetsWishlist([...planetsWishlist, planet]);
-  };
-
-  const removePlanetFromWishlist = (name) => {
-    setPlanetsWishlist(planetsWishlist.filter((p) => p.name !== name));
   };
 
   return (
@@ -32,14 +27,14 @@ export const Destinations = () => {
         <h1>Travel destinations</h1>
         <section className="card">
           <h2>Wishlist</h2>
-          {planetsWishlist.length > 0 ? (
-            <p>You have {planetsWishlist.length} planets in your wishlist</p>
+          {wishlistCount > 0 ? (
+            <p>You have {wishlistCount} planets in your wishlist</p>
           ) : (
             <p>No planets in your wishlist :(</p>
           )}
           <AddWishlistItem
             onAddWishlistItem={addPlanetToWishlist}
-            nextId={planetsWishlist.length + 1}
+            nextId={wishlistCount + 1}
           />
           <h3>Your current wishlist</h3>
           <div className={styles.wishlistList}>

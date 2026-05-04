@@ -17,12 +17,6 @@ export const WishlistProvider = ({ children }) => {
     return planetsWishlist.some((p) => p.name === name);
   };
 
-  const togglePlanetSelection = (planet) => {
-    isPlanetInWishlist(planet.name)
-      ? removePlanetFromWishlist(planet.name)
-      : addPlanetToWishlist(planet);
-  };
-
   const wishlistCount = planetsWishlist.length;
 
   return (
@@ -32,7 +26,6 @@ export const WishlistProvider = ({ children }) => {
         addPlanetToWishlist,
         removePlanetFromWishlist,
         isPlanetInWishlist,
-        togglePlanetSelection,
         wishlistCount,
       }}
     >
