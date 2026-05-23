@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The fastest presser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="game">
+      <h1 class="game-title">The fastest presser</h1>
+      <form autocomplete="off">
+        <input
+          class="seconds-input"
+          type="number"
+          step="1"
+          min="1"
+          name="seconds"
+          id="seconds"
+          placeholder="Set seconds"
+          required
+        />
+        <button class="start-button" type="submit">Start Game</button>
+      </form>
+      <div class="game-score">
+        <div class="player player-s">
+          <h2>Press S</h2>
+          <p class="player-s-score"></p>
+          <canvas id="confetti-s"></canvas>
+        </div>
+        <div class="player player-l">
+          <h2>Press L</h2>
+          <p class="player-l-score"></p>
+          <canvas id="confetti-l"></canvas>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>

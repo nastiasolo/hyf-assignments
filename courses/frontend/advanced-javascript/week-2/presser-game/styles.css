@@ -1,0 +1,110 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Special Elite", sans-serif;
+}
+
+.game {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background-color: white;
+  padding: 50px;
+  border: 2px solid black;
+}
+
+.game-title {
+  text-align: center;
+}
+
+.seconds-input {
+  border: 2px solid black;
+  padding: 20px;
+  font-family: inherit;
+  font-size: 20px;
+}
+
+.start-button {
+  font-family: inherit;
+  font-size: 20px;
+  padding: 20px;
+  border: 2px solid black;
+  background-color: darkgrey;
+}
+
+.start-button:hover:not(:disabled) {
+  cursor: pointer;
+  background-color: rgb(254, 234, 19);
+}
+
+.game-score {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  height: 160px;
+  width: 100%;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.player h2 {
+  display: inline-block;
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.player h2,
+.player-s-score,
+.player-l-score {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
